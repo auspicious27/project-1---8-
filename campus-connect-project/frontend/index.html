@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusConnect is a demo full stack course enquiry website built with HTML, CSS, JavaScript, Node.js and Express.">
+  <title>CampusConnect Course Enquiry</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="#">CampusConnect</a>
+      <ul class="nav-links">
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#enquiry">Enquiry</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Full Stack Demo Project</p>
+        <h1>Learn web development with one complete practical project.</h1>
+        <p class="hero-text">Build a responsive website, validate a form, store enquiries in the browser, and send data to an Express REST API.</p>
+        <a class="primary-button" href="#enquiry">Submit Enquiry</a>
+      </div>
+      <div class="hero-card">
+        <h2>Project Stack</h2>
+        <p>HTML5 + CSS3 + JavaScript + Node.js + Express.js</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="courses" class="section">
+      <p class="eyebrow">Courses</p>
+      <h2>Available Learning Tracks</h2>
+      <div class="course-grid">
+        <article class="course-card">
+          <h3>Frontend Development</h3>
+          <p>HTML, CSS, JavaScript, responsive design and DOM practice.</p>
+        </article>
+        <article class="course-card">
+          <h3>Backend Development</h3>
+          <p>Node.js, Express.js, routing, REST APIs and middleware.</p>
+        </article>
+        <article class="course-card">
+          <h3>Full Stack Development</h3>
+          <p>Connect frontend forms with backend APIs using real project flow.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="enquiry" class="section form-section">
+      <div>
+        <p class="eyebrow">Enquiry Form</p>
+        <h2>Student Course Enquiry</h2>
+        <p>Fill the form. JavaScript will validate it, save it in localStorage, and send it to backend API.</p>
+      </div>
+
+      <form id="enquiryForm" class="enquiry-form">
+        <label for="studentName">Student Name</label>
+        <input id="studentName" type="text" placeholder="Enter full name">
+
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="Enter email">
+
+        <label for="course">Course</label>
+        <select id="course">
+          <option value="">Select a course</option>
+          <option value="Frontend Development">Frontend Development</option>
+          <option value="Backend Development">Backend Development</option>
+          <option value="Full Stack Development">Full Stack Development</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Write your message"></textarea>
+
+        <button type="submit">Send Enquiry</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="section">
+      <p class="eyebrow">Dashboard</p>
+      <h2>Saved Enquiries</h2>
+      <div class="dashboard-actions">
+        <button id="loadButton" type="button">Load Local Enquiries</button>
+        <button id="clearButton" type="button">Clear Local Enquiries</button>
+      </div>
+      <div id="enquiryList" class="enquiry-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>CampusConnect demo project for Module 1 to Module 8 classroom training.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
