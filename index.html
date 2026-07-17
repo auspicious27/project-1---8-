@@ -95,6 +95,31 @@
     <p><strong>Small business website:</strong> Same structure service enquiry, product enquiry, appointment booking, consultation request ke liye use ho sakta hai.</p>
   </section>
 
+  <section class="box teacher">
+    <h2>Teacher Explanation: Is Project Ko Class Mein Kaise Introduce Karna Hai?</h2>
+    <p>Class start karte time learners ko ye mat bolo ki hum sirf HTML, CSS, JavaScript, Node.js, Express padhne wale hain. Unko pehle ek real problem do. Example: "Ek training institute hai jahan students course ke baare mein enquiry bhejna chahte hain. Institute ko ek website chahiye jahan courses show ho, student form fill kare, data browser mein bhi save ho, aur backend API ko bhi send ho." Isse learners ko immediately samajh aayega ki har technology ka real kaam kya hai.</p>
+    <p>Phir explain karo ki ek real full stack project mein frontend and backend dono hote hain. Frontend wo part hai jo user ko dikhta hai: page, form, button, cards, dashboard. Backend wo part hai jo background mein request receive karta hai, data validate karta hai, response bhejta hai. Is project mein database intentionally simple rakha gaya hai, array use kiya gaya hai, taaki beginners pehle request-response and API concept clear kar sakein. Later isi array ko MongoDB ya database se replace kar sakte hain.</p>
+    <p>Students ko ye bhi batao ki ye project sirf ek course enquiry website nahi hai. Same pattern se contact form, admission form, appointment booking, product enquiry, feedback form, lead generation form, and support ticket form bhi ban sakta hai. Matlab ek project se multiple real-world ideas samajh aate hain.</p>
+  </section>
+
+  <section class="box note">
+    <h2>Complete Project Flow in Simple Story</h2>
+    <p>Socho Rahul naam ka student website open karta hai. Browser sabse pehle <span class="code">index.html</span> load karta hai. HTML page ka structure banata hai: navbar, course cards, enquiry form, dashboard. Uske baad browser <span class="code">styles.css</span> load karta hai. CSS page ko professional design deta hai: colors, spacing, cards, buttons, responsive layout. Phir browser <span class="code">script.js</span> load karta hai. JavaScript page ko interactive banata hai: form ka data read karta hai, validation karta hai, localStorage mein save karta hai, dashboard update karta hai, and backend API ko request bhejta hai.</p>
+    <p>Backend side par <span class="code">server.js</span> run hota hai. Jab frontend <span class="code">POST /api/enquiries</span> request bhejta hai, Express route request receive karta hai. <span class="code">express.json()</span> middleware JSON body read karta hai. Backend name, email, course, message validate karta hai. Agar data valid hai toh enquiry array mein save hoti hai and response return hota hai. Frontend response read karke student ko success message show karta hai.</p>
+  </section>
+
+  <section class="box">
+    <h2>Project Files Ka Real Purpose</h2>
+    <table>
+      <tr><th>File</th><th>Real Work</th><th>Classroom Explanation</th></tr>
+      <tr><td><span class="code">frontend/index.html</span></td><td>Website ka structure</td><td>Is file mein visible content hota hai. Agar HTML ko building samjho, toh ye rooms, doors, headings, form fields, and sections define karta hai.</td></tr>
+      <tr><td><span class="code">frontend/styles.css</span></td><td>Website ka design</td><td>CSS decide karta hai page ka color, spacing, card look, mobile layout, button style. Same HTML CSS ke bina plain dikhega.</td></tr>
+      <tr><td><span class="code">frontend/script.js</span></td><td>Website ka behavior</td><td>JavaScript decide karta hai button click par kya hoga, form submit par kya check hoga, dashboard ka data kaise update hoga.</td></tr>
+      <tr><td><span class="code">backend/package.json</span></td><td>Backend project info and dependencies</td><td>Is file se npm ko pata chalta hai project ko kaunsa package chahiye, jaise Express.</td></tr>
+      <tr><td><span class="code">backend/server.js</span></td><td>Backend API server</td><td>Ye server request receive karta hai, API routes banata hai, validation karta hai, response bhejta hai.</td></tr>
+    </table>
+  </section>
+
   <section class="box story">
     <h2>Project Story</h2>
     <p>Imagine ek training institute hai. Institute ko ek website chahiye jahan students course details dekh sakein and enquiry form fill kar sakein. Frontend student ko page dikhata hai. JavaScript form check karta hai. Backend enquiry receive karta hai. REST API data ko JSON response ke form mein return karti hai. Yehi real full stack flow hota hai.</p>
@@ -200,6 +225,24 @@
     <tr><td><span class="code">&lt;script src="script.js"&gt;</span></td><td>JavaScript file connect karta hai. Ye line body ke end mein hai taaki HTML elements pehle load ho jayein.</td><td>Form validation, localStorage, dashboard update kaam nahi karega.</td></tr>
   </table>
 
+  <h3>Actual Frontend HTML - Deeper Line-by-Line Teaching Notes</h3>
+  <p>Is section mein actual project ke HTML parts ko teacher-style explain kiya gaya hai. Jab aap class mein code likhwao, har block ke baad rukkar output dikhao. Isse learner ko samajh aayega ki har line page par kya impact kar rahi hai.</p>
+  <table>
+    <tr><th>Code Part</th><th>Detailed Simple Hinglish Explanation</th><th>Real Use Case</th></tr>
+    <tr><td><span class="code">&lt;meta name="description"...&gt;</span></td><td>Ye page ka short summary browser/search engine ko deta hai. User ko direct page par nahi dikhta, but search engine ke liye helpful hota hai. Is project mein description batata hai ki ye HTML, CSS, JS, Node.js, Express ka demo project hai.</td><td>Company websites SEO ke liye description add karti hain taaki Google result mein page ka purpose clear ho.</td></tr>
+    <tr><td><span class="code">&lt;header class="site-header"&gt;</span></td><td>Header page ka top wrapper hai. Iske andar navbar and hero section rakha gaya hai. Class isliye di gayi hai taaki CSS se pura header gradient background ke saath style ho sake.</td><td>Amazon, Flipkart, college websites mein top header brand identity and navigation ke liye hota hai.</td></tr>
+    <tr><td><span class="code">&lt;a class="brand" href="#"&gt;CampusConnect&lt;/a&gt;</span></td><td>Ye website ka brand/logo text hai. Anchor tag use hua hai kyunki real websites mein logo usually clickable hota hai. <span class="code">href="#"</span> ka matlab current page ke top par stay karna.</td><td>Website logo click karne par mostly home page open hota hai.</td></tr>
+    <tr><td><span class="code">&lt;ul class="nav-links"&gt;</span></td><td>Navigation links ko unordered list mein rakha gaya hai. Semantically navigation links ek list hote hain, isliye <span class="code">ul</span> and <span class="code">li</span> use karna better hai.</td><td>Screen readers navigation items ko clearly list ke form mein read kar sakte hain.</td></tr>
+    <tr><td><span class="code">&lt;section class="hero"&gt;</span></td><td>Hero section website ka first main introduction area hota hai. Ismein project ka main message, short description, and call-to-action button hai. Hero user ko batata hai page kis baare mein hai.</td><td>Landing pages mein hero section lead capture ya product introduction ke liye use hota hai.</td></tr>
+    <tr><td><span class="code">&lt;p class="eyebrow"&gt;</span></td><td>Eyebrow ek chhota label hota hai jo heading se pehle context deta hai. Is project mein "Full Stack Demo Project" page ka category label hai.</td><td>Marketing websites "New Course", "Limited Offer", "Workshop" jaisi labels use karti hain.</td></tr>
+    <tr><td><span class="code">&lt;a class="primary-button" href="#enquiry"&gt;</span></td><td>Ye button user ko enquiry form tak le jaata hai. Technically ye anchor link hai, but CSS se button jaisa design diya gaya hai. <span class="code">#enquiry</span> same page ke enquiry section ID par jump karta hai.</td><td>Landing pages mein "Apply Now", "Book Demo", "Contact Us" buttons same style mein use hote hain.</td></tr>
+    <tr><td><span class="code">&lt;article class="course-card"&gt;</span></td><td>Har course ek independent content block hai, isliye <span class="code">article</span> semantic tag use hua. Agar ek card alag bhi read ho, toh uska title and description complete information dete hain.</td><td>Blog cards, product cards, service cards mein article useful hota hai.</td></tr>
+    <tr><td><span class="code">&lt;form id="enquiryForm" class="enquiry-form"&gt;</span></td><td>Form user input collect karta hai. <span class="code">id</span> JavaScript ke liye hai, <span class="code">class</span> CSS styling ke liye hai. Ye beginner ko ID vs class ka practical difference samjhata hai.</td><td>Admission forms, contact forms, checkout forms same structure follow karte hain.</td></tr>
+    <tr><td><span class="code">&lt;input id="email" type="email"&gt;</span></td><td>Email input field browser ko batata hai ki yahan email type data expected hai. Browser kuch basic email validation help kar sakta hai. JavaScript additional validation karega.</td><td>Login forms and enquiry forms mein email field common hota hai.</td></tr>
+    <tr><td><span class="code">&lt;p id="formMessage" class="form-message"&gt;</span></td><td>Ye empty paragraph status message show karne ke liye hai. JavaScript success ya error text isi paragraph ke andar set karega.</td><td>Real apps mein "Saved successfully", "Invalid email", "Try again" messages isi pattern se show hote hain.</td></tr>
+    <tr><td><span class="code">&lt;div id="enquiryList" class="enquiry-list"&gt;</span></td><td>Ye dashboard ka empty container hai. JavaScript saved enquiries ko cards ke form mein create karke isi div ke andar add karega.</td><td>Admin dashboard, cart list, task list, notification list dynamic containers use karte hain.</td></tr>
+  </table>
+
   <section class="box teacher">
     <h3>How to Teach HTML Step</h3>
     <p>Students ko pehle plain HTML page dikhao. Explain karo ki HTML design nahi karta; HTML page ka content and meaning define karta hai. Semantic tags use karne se browser, screen readers, and search engines ko page better samajh aata hai.</p>
@@ -268,6 +311,22 @@
     <tr><td><span class="code">@media</span></td><td>Responsive design ka core tool. Screen size ke according layout change hota hai.</td><td>Browser width resize karke live demo karo.</td></tr>
   </table>
 
+  <h3>Actual CSS - Deeper Line-by-Line Teaching Notes</h3>
+  <p>CSS explain karte waqt learners ko ek simple baat baar-baar remind karo: HTML element banata hai, CSS us element ko visually presentable banata hai. Agar CSS remove kar doge toh project ka logic same rahega, but page professional nahi dikhega.</p>
+  <table>
+    <tr><th>CSS Code</th><th>Detailed Simple Hinglish Explanation</th><th>Output Par Effect</th></tr>
+    <tr><td><span class="code">font-family: Arial, Helvetica, sans-serif;</span></td><td>Page ke text ka font set karta hai. Browser pehle Arial use karega. Agar Arial available nahi hai toh Helvetica, phir generic sans-serif use karega.</td><td>Text clean and readable dikhega.</td></tr>
+    <tr><td><span class="code">line-height: 1.6;</span></td><td>Text lines ke beech vertical space set karta hai. Agar line-height kam hogi toh paragraph congested lagega. 1.6 reading ke liye comfortable hota hai.</td><td>Paragraphs readable and airy dikhenge.</td></tr>
+    <tr><td><span class="code">background: linear-gradient(135deg,...)</span></td><td>Header mein two-color gradient create karta hai. <span class="code">135deg</span> direction set karta hai. Ye plain solid color se zyada modern feel deta hai.</td><td>Top section professional landing page jaisa dikhega.</td></tr>
+    <tr><td><span class="code">display: flex;</span></td><td>Navbar ke children ko flexible row layout mein convert karta hai. Isse brand and links ko easily align kar sakte hain.</td><td>Logo left and links right side align honge.</td></tr>
+    <tr><td><span class="code">align-items: center;</span></td><td>Flex row mein items vertically center karta hai. Agar logo and links ki height different ho, tab bhi nicely align honge.</td><td>Navbar balanced dikhega.</td></tr>
+    <tr><td><span class="code">list-style: none;</span></td><td>Navigation list ke bullets remove karta hai. HTML mein list semantic hai, but visual design mein bullets nahi chahiye.</td><td>Navigation clean menu jaisa dikhega.</td></tr>
+    <tr><td><span class="code">text-decoration: none;</span></td><td>Links ke underline remove karta hai. Professional nav links mostly underline ke bina style hote hain.</td><td>Navbar and buttons cleaner dikhenge.</td></tr>
+    <tr><td><span class="code">grid-template-columns: repeat(3, 1fr);</span></td><td>Course cards ko 3 equal columns mein divide karta hai. <span class="code">1fr</span> means available space ka equal fraction.</td><td>Desktop par 3 course cards ek row mein dikhenge.</td></tr>
+    <tr><td><span class="code">border-left: 5px solid #2457d6;</span></td><td>Saved enquiry card ke left side blue highlight line add karta hai. Ye visual priority and card identity create karta hai.</td><td>Dashboard cards easily noticeable honge.</td></tr>
+    <tr><td><span class="code">@media (max-width: 760px)</span></td><td>Jab screen width 760px se kam hogi, andar wale CSS rules apply honge. Ye mobile responsive design ka main technique hai.</td><td>Mobile par grid single column ho jayega.</td></tr>
+  </table>
+
   <section class="module-band">
     <h2>Module 4 and 5: JavaScript and Advanced JavaScript</h2>
     <p>JavaScript page ko interactive banata hai.</p>
@@ -330,6 +389,24 @@ enquiryForm.addEventListener("submit", async function (event) {
     <tr><td><span class="code">return ""</span></td><td>No error case represent karta hai.</td><td>Empty string ka matlab form valid hai.</td></tr>
     <tr><td><span class="code">addEventListener</span></td><td>User action listen karta hai.</td><td>Click, submit, input jaise events se page interactive banta hai.</td></tr>
     <tr><td><span class="code">event.preventDefault()</span></td><td>Default form submit/reload stop karta hai.</td><td>Single page behavior ke liye zaroori hai.</td></tr>
+  </table>
+
+  <h3>Actual JavaScript - Deeper Line-by-Line Teaching Notes</h3>
+  <p>JavaScript ko learners ko "website ka brain" samjhao. HTML form bana deta hai, CSS form ko beautiful bana deta hai, but JavaScript decide karta hai ki form submit hone par kya action lena hai.</p>
+  <table>
+    <tr><th>JavaScript Code</th><th>Detailed Simple Hinglish Explanation</th><th>Purpose</th></tr>
+    <tr><td><span class="code">const courseInput = document.getElementById("course");</span></td><td>Dropdown element ko JavaScript variable mein store karta hai. <span class="code">course</span> ID HTML select tag mein di gayi hai. Jab user course choose karega, JS uski value yahan se read karega.</td><td>Selected course backend and dashboard mein save karna.</td></tr>
+    <tr><td><span class="code">const messageInput = document.getElementById("message");</span></td><td>Textarea ko select karta hai. User ka detailed message isi field mein hota hai.</td><td>Student ka enquiry message collect karna.</td></tr>
+    <tr><td><span class="code">localStorage.getItem("campusEnquiries")</span></td><td>Browser ke local storage se saved data read karta hai. Key name <span class="code">campusEnquiries</span> ek label jaisa hai jiske under data save hota hai.</td><td>Page refresh ke baad bhi saved enquiries dikhana.</td></tr>
+    <tr><td><span class="code">savedData ? JSON.parse(savedData) : []</span></td><td>Ye ternary condition hai. Agar savedData available hai toh JSON string ko array mein convert karo. Agar data nahi hai toh empty array return karo.</td><td>First time page open hone par error avoid karna.</td></tr>
+    <tr><td><span class="code">localStorage.setItem(...)</span></td><td>Browser storage mein data save karta hai. localStorage sirf string save karta hai, isliye object/array ko pehle JSON string banana padta hai.</td><td>Local saved enquiry list maintain karna.</td></tr>
+    <tr><td><span class="code">formMessage.textContent = text;</span></td><td>Status paragraph ke andar message text set karta hai. Agar validation fail hui toh error text, success hua toh success text show hoga.</td><td>User feedback show karna.</td></tr>
+    <tr><td><span class="code">formMessage.className = "form-message " + type;</span></td><td>Class dynamically change karta hai. Agar type success hai toh green color, agar error hai toh red color apply hoga.</td><td>Same paragraph ko success/error style dena.</td></tr>
+    <tr><td><span class="code">enquiryList.innerHTML = "";</span></td><td>Dashboard list ko pehle empty karta hai. Agar ye line nahi hogi toh render karte time duplicate cards add hote rahenge.</td><td>Fresh dashboard render karna.</td></tr>
+    <tr><td><span class="code">document.createElement("article")</span></td><td>JavaScript se naya HTML article element create karta hai. Ye saved enquiry card banega.</td><td>Dynamic card create karna without manually writing HTML.</td></tr>
+    <tr><td><span class="code">card.innerHTML = `...`</span></td><td>Template literal ke through card ke andar heading and paragraphs add karta hai. Backtick string mein variables directly use kar sakte hain.</td><td>Each enquiry ka card content generate karna.</td></tr>
+    <tr><td><span class="code">enquiryList.appendChild(card)</span></td><td>Created card ko dashboard container ke andar add karta hai. Iske baad card page par visible ho jata hai.</td><td>Screen par saved enquiry show karna.</td></tr>
+    <tr><td><span class="code">try { ... } catch (error) { ... }</span></td><td>Backend request fail ho sakti hai, isliye try/catch use hua. Agar backend running hai toh success, nahi running toh local save message show hoga.</td><td>Application crash hone se bachana.</td></tr>
   </table>
 
   <h3>Browser Storage and API Code</h3>
@@ -471,6 +548,24 @@ app.listen(PORT, function () {
     <tr><td><span class="code">status code 201</span></td><td>New resource created.</td><td>POST request success hone par commonly use hota hai.</td></tr>
     <tr><td><span class="code">status code 400</span></td><td>Bad user input.</td><td>Validation fail hone par backend 400 return karta hai.</td></tr>
     <tr><td><span class="code">status code 404</span></td><td>Route not found.</td><td>Wrong URL hit hone par user-friendly error response milta hai.</td></tr>
+  </table>
+
+  <h3>Actual Backend Code - Deeper Line-by-Line Teaching Notes</h3>
+  <p>Backend ko learners ko restaurant kitchen example se samjhao. Frontend dining area jaisa hai jahan customer order deta hai. Backend kitchen jaisa hai jahan order receive, check, prepare, and response diya jata hai. Express routes waiter ki tarah request ko correct function tak le jaate hain.</p>
+  <table>
+    <tr><th>Backend Code</th><th>Detailed Simple Hinglish Explanation</th><th>Real Use</th></tr>
+    <tr><td><span class="code">const express = require("express");</span></td><td>Node.js ko bolta hai ki Express package load karo. <span class="code">require</span> CommonJS import system hai. Agar ye line missing hogi toh Express app create nahi hoga.</td><td>Backend framework import karna.</td></tr>
+    <tr><td><span class="code">const app = express();</span></td><td>Express ka main application object banata hai. Is object par hum routes, middleware, and server listen setup karte hain.</td><td>API server ki main body create karna.</td></tr>
+    <tr><td><span class="code">const enquiries = [];</span></td><td>Temporary memory array hai. Ye database ki jagah beginner demo ke liye use hua. Server restart karoge toh data clear ho jayega.</td><td>Beginner level data storage demo.</td></tr>
+    <tr><td><span class="code">app.use(express.json());</span></td><td>Middleware hai jo incoming JSON request body ko read karta hai. Iske bina <span class="code">request.body</span> undefined aa sakta hai.</td><td>Frontend se JSON data receive karna.</td></tr>
+    <tr><td><span class="code">response.setHeader("Access-Control-Allow-Origin", "*")</span></td><td>CORS header set karta hai. Isse frontend file/browser se backend API request allow hoti hai. Star means any origin allowed for demo.</td><td>Frontend-backend connection during local development.</td></tr>
+    <tr><td><span class="code">next();</span></td><td>Middleware ke baad request ko next route/middleware tak bhejta hai. Agar <span class="code">next()</span> nahi likhenge toh request yahin stuck ho sakti hai.</td><td>Request flow continue karna.</td></tr>
+    <tr><td><span class="code">app.get("/api/enquiries", ...)</span></td><td>GET API route hai. Jab browser/Postman is URL ko hit karega, backend saved enquiries list JSON mein return karega.</td><td>Admin dashboard ya frontend list ke liye data read karna.</td></tr>
+    <tr><td><span class="code">app.post("/api/enquiries", ...)</span></td><td>POST API route hai. Frontend form data yahin send karta hai. Backend validation ke baad new enquiry create karta hai.</td><td>New lead/enquiry save karna.</td></tr>
+    <tr><td><span class="code">if (!name || name.trim().length &lt; 3)</span></td><td>Backend validation hai. Name missing hai ya 3 characters se kam hai toh request reject hogi. Backend validation important hai because frontend validation bypass ho sakti hai.</td><td>Bad data server par save hone se rokna.</td></tr>
+    <tr><td><span class="code">return response.status(400).json(...)</span></td><td>Error response bhejkar function yahin stop karta hai. <span class="code">return</span> zaroori hai taaki neeche ka save logic run na ho.</td><td>Validation fail hone par clear error dena.</td></tr>
+    <tr><td><span class="code">id: enquiries.length + 1</span></td><td>Simple ID generate karta hai. Array length 0 hai toh first ID 1 hogi. Real database mein ID automatically generate hoti hai.</td><td>Each enquiry ko unique identify karna.</td></tr>
+    <tr><td><span class="code">app.use(function (request, response) { ... })</span></td><td>Ye 404 fallback route hai. Agar upar ke routes match nahi hue toh ye response dega ki API route not found.</td><td>Wrong URL par friendly error response.</td></tr>
   </table>
 
   <h2 class="chapter">Step-by-Step Implementation Flow</h2>
@@ -663,6 +758,50 @@ node server.js</code></pre>
     <li>Open <span class="code">http://localhost:3000/api/enquiries</span> and show saved backend data.</li>
     <li>Clear local enquiries and explain difference between browser storage and backend memory.</li>
   </ol>
+
+  <section class="box teacher">
+    <h2>Complete Execute Guide: Class Mein Live Kaise Run Karna Hai?</h2>
+    <p>Is project ko run karte time do parts yaad rakho: frontend and backend. Frontend ek normal browser page hai. Backend ek Node.js server hai. Dono alag-alag run honge. Frontend file browser mein open hogi, backend terminal mein run hoga. Agar backend run nahi hai, frontend localStorage mein data save kar lega but API success message nahi aayega.</p>
+    <h3>Part A: Frontend Run</h3>
+    <ol>
+      <li>Project folder open karo: <span class="code">Fullstack-Web-Project-Module-1-8-Notes</span>.</li>
+      <li>Folder ke andar jao: <span class="code">campus-connect-project/frontend</span>.</li>
+      <li><span class="code">index.html</span> file ko browser mein open karo.</li>
+      <li>Output mein header, course cards, enquiry form, and saved enquiries dashboard dikhna chahiye.</li>
+      <li>Ab learners ko bolo: "Ye frontend hai. Ye user ko dikhta hai. Abhi backend ke bina bhi page open ho sakta hai."</li>
+    </ol>
+    <h3>Part B: Backend Run</h3>
+    <ol>
+      <li>VS Code terminal ya normal terminal open karo.</li>
+      <li>Command run karo: <span class="code">cd campus-connect-project/backend</span>.</li>
+      <li>Pehli baar dependencies install karo: <span class="code">npm install</span>.</li>
+      <li>Server start karo: <span class="code">node server.js</span>.</li>
+      <li>Terminal mein message aayega: <span class="code">CampusConnect API running on http://localhost:3000</span>.</li>
+      <li>Browser mein <span class="code">http://localhost:3000/</span> open karo. JSON response dikhna chahiye.</li>
+    </ol>
+    <h3>Part C: Full Flow Test</h3>
+    <ol>
+      <li>Frontend form mein valid data fill karo.</li>
+      <li>Submit button click karo.</li>
+      <li>Dashboard mein enquiry card add hoga because localStorage save ho raha hai.</li>
+      <li>Backend running hai toh success message bhi show hoga.</li>
+      <li>Backend API data check karne ke liye browser mein <span class="code">http://localhost:3000/api/enquiries</span> open karo.</li>
+      <li>Students ko explain karo: "Abhi data backend memory mein hai. Server restart karoge toh backend data clear ho jayega. Real project mein database use karenge."</li>
+    </ol>
+  </section>
+
+  <section class="box note">
+    <h2>Expected Outputs - Students Ko Kya Dikhana Hai?</h2>
+    <table>
+      <tr><th>Step</th><th>Expected Output</th><th>What To Explain</th></tr>
+      <tr><td>Frontend open</td><td>Beautiful responsive CampusConnect page</td><td>HTML structure + CSS styling visible hai.</td></tr>
+      <tr><td>Empty form submit</td><td>Error message</td><td>JavaScript validation wrong input stop kar rahi hai.</td></tr>
+      <tr><td>Valid form submit</td><td>Dashboard card appears</td><td>DOM manipulation and localStorage working hai.</td></tr>
+      <tr><td>Backend home URL</td><td>JSON running message</td><td>Express server request ka response bhej raha hai.</td></tr>
+      <tr><td>GET enquiries API</td><td>JSON list of enquiries</td><td>Backend data JSON format mein return kar raha hai.</td></tr>
+      <tr><td>Wrong backend route</td><td>404 JSON error</td><td>Error handling/fallback route working hai.</td></tr>
+    </table>
+  </section>
 
   <section class="box teacher">
     <h2>How to Teach This Project in Class</h2>
